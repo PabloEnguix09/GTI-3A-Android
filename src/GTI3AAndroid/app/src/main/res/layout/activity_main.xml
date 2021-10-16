@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/botonBuscarDispositivosBTL"
+        android:text="Arrancar Servicio"
+        android:onClick="botonArrancarServicioPulsado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <Button
+        android:id="@+id/botonDetenerBusquedaDispositivosBTL"
+        android:text="Detener Servicio"
+        android:onClick="botonDetenerServicioPulsado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <EditText
+        android:id="@+id/nombreDispositivoEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="Name" />
+
+</android.widget.LinearLayout>
