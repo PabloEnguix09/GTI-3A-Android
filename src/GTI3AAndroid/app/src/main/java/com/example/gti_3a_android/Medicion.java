@@ -1,3 +1,12 @@
+/**
+ *
+ * NOMBRE: Medicion
+ * AUTOR: Pablo Enguix Llopis
+ * FECHA: 16/10/2021
+ * DESCRIPCION: Este fichero es el que contiene todos los datos de una medicion
+ *
+ */
+
 package com.example.gti_3a_android;
 
 import java.sql.Timestamp;
@@ -24,6 +33,12 @@ public class Medicion {
         this.dato = dato;
     }
 
+    /**
+     *
+     * Convierte un objeto Medicion en un JSON
+     *
+     * @return el objeto en JSON
+     */
     public String medicionToJSON() {
         String fechaFormateada = new SimpleDateFormat(FORMATO_FECHA).format(this.fecha);
 

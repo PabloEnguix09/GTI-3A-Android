@@ -1,3 +1,12 @@
+/**
+ *
+ * NOMBRE: MainActivity
+ * AUTOR: Pablo Enguix Llopis
+ * FECHA: 16/10/2021
+ * DESCRIPCION: Este fichero es el que se encarga de que los botones llamen a las funciones adecuadas, además de pedir y/o comprobar los permisos necesarios
+ *
+ */
+
 package com.example.gti_3a_android;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -75,10 +84,9 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      *
-     * Inicia el adaptador Bluetooth
+     * Comprueba si tienes activados los permisos del Bluetooth
      *
      */
-    // --------------------------------------------------------------
 
 private void comprobarPermisosBluetooth() {
     if (

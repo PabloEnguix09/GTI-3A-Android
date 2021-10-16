@@ -1,3 +1,12 @@
+/**
+ *
+ * NOMBRE: ServicioEscuharBeacons
+ * AUTOR: Pablo Enguix Llopis
+ * FECHA: 16/10/2021
+ * DESCRIPCION: Este archivo se encarga de lo relativo a escuchar beacons en segundo plano mediante el uso de servicios
+ *
+ */
+
 package com.example.gti_3a_android;
 
 import android.app.IntentService;
@@ -30,11 +39,8 @@ public class ServicioEscuharBeacons extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
-
-
-
         // esto lo ejecuta un WORKER THREAD !
-
+        iniciarServicio(intent);
         long contador = 1;
 
         Log.d(ETIQUETA_LOG, " ServicioEscucharBeacons.onHandleIntent: empieza : thread=" + Thread.currentThread().getId() );
@@ -59,7 +65,6 @@ public class ServicioEscuharBeacons extends IntentService {
 
         Log.d(ETIQUETA_LOG, " ServicioEscucharBeacons.onHandleItent: termina");
 
-
     }
 
     // ---------------------------------------------------------------------------------------------
@@ -70,6 +75,11 @@ public class ServicioEscuharBeacons extends IntentService {
         Log.d(ETIQUETA_LOG, " ServicioEscucharBeacons.constructor: termina");
     }
 
+    /**
+     *
+     * Para el servicio
+     *
+     */
     public void parar () {
 
         Log.d(ETIQUETA_LOG, " ServicioEscucharBeacons.parar() " );
@@ -86,6 +96,11 @@ public class ServicioEscuharBeacons extends IntentService {
 
     }
 
+    /**
+     *
+     * Cuando se apaga el servicio, para y deja de buscar dispositivos BTLE
+     *
+     */
     public void onDestroy() {
 
         Log.d(ETIQUETA_LOG, " ServicioEscucharBeacons.onDestroy() " );
@@ -95,6 +110,11 @@ public class ServicioEscuharBeacons extends IntentService {
         this.parar(); // posiblemente no haga falta, si stopService() ya se carga el servicio y su worker thread
     }
 
+    /**
+     *
+     * Deja de buscar dispositivos BTLE
+     *
+     */
     private void detenerBusquedaDispositivosBTLE() {
 
         if ( this.callbackDelEscaneo == null ) {
@@ -106,7 +126,13 @@ public class ServicioEscuharBeacons extends IntentService {
 
     } // ()
 
-    private void inicializarServicio(Intent intent) {
+    /**
+     *
+     * Inicia el servicio
+     *
+     * @param intent Datos que necesita
+     */
+    private void iniciarServicio(Intent intent) {
         colaDeMediciones = new ArrayList<>();
 
         this.tiempoDeEspera = intent.getLongExtra("tiempoDeEspera", /* default */ 50000);
@@ -117,6 +143,11 @@ public class ServicioEscuharBeacons extends IntentService {
         buscarEsteDispositivoBTLE(dispositivo);
     }
 
+    /**
+     *
+     * Inicia el Bluetooth
+     *
+     */
     private void inicializarBlueTooth() {
         Log.d(ETIQUETA_LOG, " inicializarBlueTooth(): obtenemos adaptador BT ");
 
@@ -143,6 +174,12 @@ public class ServicioEscuharBeacons extends IntentService {
 
     } // ()
 
+    /**
+     *
+     * Busca un dispositivo BTLE a partir de un nombre
+     *
+     * @param dispositivoBuscado el nombre del dispositivo a buscar
+     */
     private void buscarEsteDispositivoBTLE(final String dispositivoBuscado ) {
         Log.d(ETIQUETA_LOG, " buscarEsteDispositivoBTLE(): empieza ");
 
@@ -191,6 +228,12 @@ public class ServicioEscuharBeacons extends IntentService {
         this.elEscanner.startScan(filtros, opciones, this.callbackDelEscaneo );
     } // ()
 
+    /**
+     *
+     * Muestra la información del dispositivo BTLE encontrado
+     *
+     * @param resultado La información a mostrar
+     */
     private void mostrarInformacionDispositivoBTLE( ScanResult resultado ) {
 
         BluetoothDevice bluetoothDevice = resultado.getDevice();

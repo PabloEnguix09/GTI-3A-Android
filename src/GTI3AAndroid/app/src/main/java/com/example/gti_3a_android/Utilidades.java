@@ -1,3 +1,12 @@
+/**
+ *
+ * NOMBRE: Utilidades
+ * AUTOR: Pablo Enguix Llopis
+ * FECHA: 16/10/2021
+ * DESCRIPCION: Este fichero tiene funciones que nos sirven en el programa, principalmente conversoores de un tipo a otro
+ *
+ */
+
 package com.example.gti_3a_android;
 
 import java.math.BigInteger;

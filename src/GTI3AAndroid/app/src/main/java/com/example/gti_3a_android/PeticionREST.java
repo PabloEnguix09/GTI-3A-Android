@@ -1,3 +1,12 @@
+/**
+ *
+ * NOMBRE: PeticionREST
+ * AUTOR: Pablo Enguix Llopis
+ * FECHA: 16/10/2021
+ * DESCRIPCION: Este fichero es el que se encarga de recoger los datos a subir a la base de datos, subirlos e informar si se ha conseguido (logica verdadera)
+ *
+ */
+
 package com.example.gti_3a_android;
 
 import android.os.AsyncTask;
@@ -20,6 +29,14 @@ public class PeticionREST extends AsyncTask<Void, Void, Boolean> {
 
     private int codigoRespuesta;
     private String mensajeRespuesta;
+
+    /**
+     *
+     * Hace
+     *
+     * @param params
+     * @return Si se ha conseguido realizar la petición correctamente
+     */
 
     @Override
     protected Boolean doInBackground(Void... params) {
@@ -71,6 +88,13 @@ public class PeticionREST extends AsyncTask<Void, Void, Boolean> {
         }
         return false;
     }
+
+    /**
+     *
+     * Después de que se ejecute la petición REST, te dice cómo ha ido
+     *
+     * @param comoFue Si ha ido bien o mal
+     */
 
     protected void onPostExecute(Boolean comoFue) {
         this.respuesta.cb(codigoRespuesta, mensajeRespuesta);

@@ -1,3 +1,12 @@
+/**
+ *
+ * NOMBRE: TramaIBeacon
+ * AUTOR: Pablo Enguix Llopis
+ * FECHA: 16/10/2021
+ * DESCRIPCION: Este fichero es la forma de comunicarse entre el sensor y el móvil
+ *
+ */
+
 package com.example.gti_3a_android;
 
 import java.util.Arrays;
