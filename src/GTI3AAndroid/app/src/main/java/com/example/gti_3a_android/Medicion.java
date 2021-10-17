@@ -45,7 +45,7 @@ public class Medicion {
         String res = "{"+
                 "\"idUsuario\":\""+this.idUsuario+"\", " +
                 "\"idSensor\":\""+this.idSensor+"\", " +
-                "\"fecha\":\""+this.fecha+"\"," +
+                "\"fecha\":\""+ fechaFormateada +"\"," +
                 "\"posicionLat\":\""+this.posicionLat+"\", " +
                 "\"posicionLng\":\""+this.posicionLng+"\", " +
                 "\"dato\":\""+this.dato+"\", " +
