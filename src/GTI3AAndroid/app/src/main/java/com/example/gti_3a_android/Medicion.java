@@ -37,6 +37,8 @@ public class Medicion {
 
     /**
      *
+     * medicion -> medicionToJSON() -> JSON
+     *
      * Convierte un objeto Medicion en un JSON
      *
      * @return el objeto en JSON

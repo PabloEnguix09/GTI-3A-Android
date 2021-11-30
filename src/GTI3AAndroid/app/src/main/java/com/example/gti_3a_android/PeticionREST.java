@@ -32,9 +32,11 @@ public class PeticionREST extends AsyncTask<Void, Void, Boolean> {
 
     /**
      *
-     * Hace
+     * diseño logico: parametros -> doInBackgroound() -> VoF
      *
-     * @param params
+     * Hace una petición al servidor rest
+     *
+     * @param params los parámetros de la petición
      * @return Si se ha conseguido realizar la petición correctamente
      */
 
@@ -111,6 +113,17 @@ public class PeticionREST extends AsyncTask<Void, Void, Boolean> {
         void cb(int codigo, String mensaje);
     }
 
+    /**
+     *
+     * diseño logico: metodo, destino, mensaje, respuesta -> hacerPeticion()
+     *
+     * Crea los parámetros de la petición
+     *
+     * @param metodo El tipo de método (GET, POST...)
+     * @param destino La url de destino
+     * @param mensaje El cuerpo de la petición
+     * @param respuesta La respuesta que devuelve el servidor
+     */
     public void hacerPeticion(String metodo, String destino, String mensaje, Respuesta respuesta) {
         this.metodo = metodo;
         this.destino = destino;

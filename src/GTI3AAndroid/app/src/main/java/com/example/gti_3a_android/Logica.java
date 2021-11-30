@@ -18,6 +18,8 @@ public class Logica {
 
     /**
      *
+     * medicion -> guardarMedicion()
+     *
      * Guarda la medición en la base de datos
      *
      * @param medicion La medicion que guarda

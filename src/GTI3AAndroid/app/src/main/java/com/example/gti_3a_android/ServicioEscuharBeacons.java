@@ -180,6 +180,8 @@ public class ServicioEscuharBeacons extends IntentService {
 
     /**
      *
+     * diseño logico: nombre -> buscarEsteDispositivoBTLE()
+     *
      * Busca un dispositivo BTLE a partir de un nombre
      *
      * @param dispositivoBuscado el nombre del dispositivo a buscar
@@ -232,6 +234,8 @@ public class ServicioEscuharBeacons extends IntentService {
     } // ()
 
     /**
+     *
+     * diseño logico: dispoistivo -> mostrarInformacionDispositivoBTLE()
      *
      * Muestra la información del dispositivo BTLE encontrado
      *

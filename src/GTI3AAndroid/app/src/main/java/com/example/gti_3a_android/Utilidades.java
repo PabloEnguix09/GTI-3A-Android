@@ -18,6 +18,8 @@ public class Utilidades {
 
     /**
      *
+     * diseño logico: texto -> stringToBytes() -> byte
+     *
      * Convierte un string en bytes
      *
      * @param texto el string a convertir
@@ -32,6 +34,8 @@ public class Utilidades {
     // -------------------------------------------------------------------------------
 
     /**
+     *
+     * diseño logico: texto -> stringToUUID() -> UUID
      *
      * Convierte un string en un objeto UUID
      *
@@ -60,6 +64,8 @@ public class Utilidades {
 
     /**
      *
+     * diseño logico: UUID -> uuidToString() -> texto
+     *
      * Convierte un UUID en un string
      *
      * @param uuid el uuid a convertir
@@ -74,6 +80,8 @@ public class Utilidades {
 
     /**
      *
+     * diseño logico: UUID -> uuidToHexString() -> texto
+     *
      * Convierte un UUID a HexString
      *
      * @param uuid el uuid a convertir
@@ -87,6 +95,8 @@ public class Utilidades {
     // -------------------------------------------------------------------------------
 
     /**
+     *
+     * diseño logico: byte -> bytesToString() -> texto
      *
      * Convierte bytes en string
      *
@@ -110,6 +120,8 @@ public class Utilidades {
 
     /**
      *
+     * diseño logico: long1, long2 -> dosLongToBytes() -> byte
+     *
      * Convierte dos longs en un byte
      *
      * @param masSignificativos los primeros bytes
@@ -128,6 +140,8 @@ public class Utilidades {
 
     /**
      *
+     * diseño logico: byte -> bytesToInt() -> int
+     *
      * Convierte bytes en numeros enteros
      *
      * @param bytes los bytes a convertir
@@ -142,6 +156,8 @@ public class Utilidades {
 
     /**
      *
+     * diseño logico: byte -> bytesToLong() -> long
+     *
      * Convierte bytes en long
      *
      * @param bytes los bytes a convertir
@@ -155,6 +171,8 @@ public class Utilidades {
     // -------------------------------------------------------------------------------
 
     /**
+     *
+     * diseño logico: byte -> bytesToIntOK() -> int
      *
      * Convierte bytes en un número entero siempre que hayan menos de 4
      *
@@ -201,6 +219,8 @@ public class Utilidades {
     // -------------------------------------------------------------------------------
 
     /**
+     *
+     * diseño logico: byte -> bytesToHexString() -> texto
      *
      * Convierte bytes en HexString
      *

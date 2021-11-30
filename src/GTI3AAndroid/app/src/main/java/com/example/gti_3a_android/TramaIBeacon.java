@@ -96,6 +96,8 @@ public class TramaIBeacon {
 
     /**
      *
+     * diseño logico: byte -> TramaIBeacon()
+     *
      * Constructor de TramaIBeacon
      *
      * @param bytes Los bytes de la trama
