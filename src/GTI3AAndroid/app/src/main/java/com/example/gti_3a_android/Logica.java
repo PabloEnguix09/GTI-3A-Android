@@ -24,7 +24,7 @@ public class Logica {
      */
     public void guardarMedicion(Medicion medicion) {
         PeticionREST peticionREST = new PeticionREST();
-        String direccionREST = "http://192.168.10.103:8080/medicion";
+        String direccionREST = "http://192.168.43.50:8080/postMedicion";
 
         peticionREST.hacerPeticion("POST", direccionREST, medicion.medicionToJSON(),
                 new PeticionREST.Respuesta () {

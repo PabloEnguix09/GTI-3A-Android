@@ -140,7 +140,11 @@ public class ServicioEscuharBeacons extends IntentService {
 
         this.dispositivo = intent.getStringExtra("nombreDispositivo");
         inicializarBlueTooth();
-        buscarEsteDispositivoBTLE(dispositivo);
+
+        Medicion medicion = new Medicion(1, 1, 0, 0, 35);
+        new Logica().guardarMedicion(medicion);
+
+        //buscarEsteDispositivoBTLE(dispositivo);
     }
 
     /**
@@ -184,7 +188,6 @@ public class ServicioEscuharBeacons extends IntentService {
         Log.d(ETIQUETA_LOG, " buscarEsteDispositivoBTLE(): empieza ");
 
         Log.d(ETIQUETA_LOG, "  buscarEsteDispositivoBTLE(): instalamos scan callback ");
-
 
         // super.onScanResult(ScanSettings.SCAN_MODE_LOW_LATENCY, result); para ahorro de energía
 

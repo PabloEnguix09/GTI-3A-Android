@@ -49,7 +49,7 @@ public class PeticionREST extends AsyncTask<Void, Void, Boolean> {
             connection.setRequestMethod(metodo);
             connection.setDoInput(true);
 
-            if (this.metodo.equals("GET") && this.mensaje != null) {
+            if (!this.metodo.equals("GET") && this.mensaje != null) {
                 connection.setDoOutput(true);
                 DataOutputStream dataOutputStream = new DataOutputStream(connection.getOutputStream());
                 dataOutputStream.writeBytes(mensaje);
@@ -63,9 +63,13 @@ public class PeticionREST extends AsyncTask<Void, Void, Boolean> {
             String res = "" + codigoRes + ":" + resMensaje;
             codigoRespuesta = codigoRes;
 
+
             try {
                 InputStream inputStream = connection.getInputStream();
+                Log.d("REST", inputStream.toString());
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+                Log.d("REST","bufferedReader:" + bufferedReader.toString());
+
                 String linea;
                 StringBuilder stringBuilder = new StringBuilder();
                 while ((linea = bufferedReader.readLine()) != null) {

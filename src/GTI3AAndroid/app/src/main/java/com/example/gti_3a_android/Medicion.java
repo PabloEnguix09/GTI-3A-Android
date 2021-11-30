@@ -9,6 +9,8 @@
 
 package com.example.gti_3a_android;
 
+import android.util.Log;
+
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 
@@ -48,8 +50,9 @@ public class Medicion {
                 "\"fecha\":\""+ fechaFormateada +"\"," +
                 "\"posicionLat\":\""+this.posicionLat+"\", " +
                 "\"posicionLng\":\""+this.posicionLng+"\", " +
-                "\"dato\":\""+this.dato+"\", " +
+                "\"dato\":\""+this.dato+"\"" +
                 "}";
+        Log.d("medicion", res);
         return res;
     }
 }
